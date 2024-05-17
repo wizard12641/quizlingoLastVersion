@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navapp"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.edu.quizlingo.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+    </fragment>
+    <action
+        android:id="@+id/action_loginFragment_to_mainFragment"
+        app:destination="@id/mainFragment" />
+    <action
+        android:id="@+id/action_loginFragment_to_registerFragment"
+        app:destination="@id/registerFragment" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.edu.quizlingo.view.RegisterFragment"
+        android:label="RegisterFragment" >
+    </fragment>
+    <action
+        android:id="@+id/action_registerFragment_to_loginFragment"
+        app:destination="@id/loginFragment" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.edu.quizlingo.view.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+    </fragment>
+    <action
+        android:id="@+id/action_mainFragment_to_quizFragment"
+        app:destination="@id/quizFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.edu.quizlingo.view.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+    </fragment>
+    <action
+        android:id="@+id/action_profileFragment_to_editProfileFragment"
+        app:destination="@id/editProfileFragment" />
+    <action
+        android:id="@+id/action_profileFragment_to_loginFragment"
+        app:destination="@id/loginFragment" />
+    <action
+        android:id="@+id/action_profileFragment_to_quizQuestionAddFragment"
+        app:destination="@id/quizQuestionAddFragment" />
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.edu.quizlingo.view.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" />
+    <fragment
+        android:id="@+id/quizQuestionAddFragment"
+        android:name="com.edu.quizlingo.view.QuizQuestionAddFragment"
+        android:label="fragment_quiz_question_add"
+        tools:layout="@layout/fragment_quiz_question_add" />
+    <fragment
+        android:id="@+id/answerListFragment"
+        android:name="com.edu.quizlingo.view.AnswerListFragment"
+        android:label="fragment_answer_list"
+        tools:layout="@layout/fragment_answer_list" />
+    <fragment
+        android:id="@+id/quizItemFragment"
+        android:name="com.edu.quizlingo.view.QuizItemFragment"
+        android:label="fragment_quiz_item"
+        tools:layout="@layout/fragment_quiz_item" >
+    </fragment>
+
+    <action
+        android:id="@+id/action_quizItemFragment_to_answerListFragment"
+        app:destination="@id/answerListFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.edu.quizlingo.view.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+    </fragment>
+    <action
+        android:id="@+id/action_editProfileFragment_to_profileFragment"
+        app:destination="@id/profileFragment" />
+</navigation>

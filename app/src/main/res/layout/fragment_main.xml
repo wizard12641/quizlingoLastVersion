@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainFragment">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tb_exam"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_brandly_item"
+        android:elevation="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Main Courses">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="12dp"
+            android:src="@drawable/ic_baseline_local_post_office_24" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_exam">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="end"
+                android:layout_margin="10dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/img_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_whoami_person_name"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="12dp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:gravity="center_vertical"
+                android:textColor="#263238"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/img"
+                app:layout_constraintEnd_toStartOf="@+id/img"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/img"
+                android:text="Hello Mrs. Carter!" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/course_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/poppins_extrabold"
+        android:text="Quiz List"
+        android:textColor="#263238"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/cv_welcome"
+        app:layout_constraintTop_toBottomOf="@id/cv_welcome" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_course_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/course_list"
+        app:spanCount="2"
+        tools:listitem="@layout/courses_list_item_layout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
